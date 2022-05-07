@@ -1,6 +1,6 @@
 #include "Gibbet.h"
 
-Gibbet::Gibbet(std::string& word)
+Gibbet::Gibbet(const std::string& word)
 {
 	lengthGibbetWord = word.length();
 	
@@ -19,8 +19,32 @@ Gibbet::Gibbet(std::string& word)
 	gameOver = false;
 	aLetter = 0;
 	
+	//Apaga e preenche o Diplay com '_' conforme o tamanho de gibbetWord
+	resetDisplay();
+		
 }
 
 Gibbet::~Gibbet()
 {
 }
+
+void Gibbet::resetDisplay()
+{
+	//Apaga todo o conteudo do Display e preenche com '_'
+	if (!display.empty()) {
+		display.clear();
+	}
+	
+	for (size_t c = 0; c < lengthGibbetWord; c++) {
+		display.push_back('_');
+	}
+}
+
+void Gibbet::showDisplay()
+{
+	for (char c : display) {
+		std::cout << c << std::endl;
+	}
+}
+
+

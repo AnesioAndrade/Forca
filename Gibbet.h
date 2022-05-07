@@ -5,7 +5,7 @@
 class Gibbet
 {
 public:
-	Gibbet(std::string& word);
+	Gibbet(const std::string& word);
 	~Gibbet();
 	
 private:
@@ -19,5 +19,8 @@ private:
 	bool gameOver; //fim de jogo
 
 	float factor; // fator para criar um numero de tentativas baseado em gibbetWord
+
+	void resetDisplay();
+	void showDisplay();
 };
 
