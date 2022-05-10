@@ -13,11 +13,11 @@ public:
 private:
 	std::vector<char>gibbetWord{}; //palavra para enforcamento
 	std::vector<char>display{}; //painel 
-	std::vector<char>typedLetteres{}; //letras digitadas
-	char aLetter; //letra digitada
+	std::vector<char>typedCharacter{}; //letras digitadas
+	char aCharacter; //letra digitada
 	size_t displayCount;//contador do display
 	size_t lengthGibbetWord; //comprimento da palavra de enforcamento
-	size_t rightLetters; //para cada letra que estiver certa, adiciona +1
+	size_t rightCharacter; //para cada letra que estiver certa, adiciona +1
 	int numAttempts; //número de tentativas
 	bool AttemptsOver; //tentátivas encerradas
 	bool gameOver; //fim de jogo

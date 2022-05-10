@@ -3,7 +3,7 @@
 Gibbet::Gibbet(const std::string& word)
 {
 	lengthGibbetWord = word.length(); //obtem a quantidade de caracteres que a Palavra possuiu
-	rightLetters = 0; // zera a quantidade de letras certas
+	rightCharacter = 0; // zera a quantidade de letras certas
 	displayCount = 0;//zera o contador do Display
 	//copia caracter por caracter de word para gibbetWord ;)
 	size_t count = 0;
@@ -16,7 +16,7 @@ Gibbet::Gibbet(const std::string& word)
 	numAttempts = static_cast <int>(lengthGibbetWord * factor);
 	AttemptsOver = false;
 	gameOver = false;
-	aLetter = 0;
+	aCharacter = 0;
 	//Apaga e preenche o Diplay com '_' conforme o tamanho de gibbetWord
 	resetDisplay();		
 }
@@ -27,7 +27,7 @@ Gibbet::~Gibbet()
 
 void Gibbet::takeLetter(const char& c)
 {
-	aLetter = c;
+	aCharacter = c;
 	showDisplay();
 }
 
@@ -45,9 +45,9 @@ void Gibbet::resetDisplay()
 void Gibbet::showDisplay()
 {
 	for (char l : gibbetWord) {
-		if (l == aLetter) {
-			display.at(displayCount) = aLetter;
-			rightLetters++;
+		if (l == aCharacter) {
+			display.at(displayCount) = aCharacter;
+			rightCharacter++;
 		}
 		displayCount++;
 	}
