@@ -31,6 +31,11 @@ void Gibbet::getCharacter(const char& c)
 	showDisplay();
 }
 
+int Gibbet::getAttempts()
+{
+	return numAttempts;
+}
+
 void Gibbet::resetDisplay()
 {
 	//Apaga todo o conteudo do Display e preenche com '_'

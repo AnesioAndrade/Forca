@@ -8,6 +8,7 @@ public:
 	Gibbet(const std::string& word);
 	~Gibbet();
 	void getCharacter(const char& c);
+	int getAttempts();
 
 	
 private:
