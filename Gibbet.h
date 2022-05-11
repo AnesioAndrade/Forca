@@ -7,7 +7,7 @@ class Gibbet
 public:
 	Gibbet(const std::string& word);
 	~Gibbet();
-	void takeLetter(const char& c);
+	void getCharacter(const char& c);
 
 	
 private:

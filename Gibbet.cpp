@@ -25,7 +25,7 @@ Gibbet::~Gibbet()
 {
 }
 
-void Gibbet::takeLetter(const char& c)
+void Gibbet::getCharacter(const char& c)
 {
 	aCharacter = c;
 	showDisplay();
