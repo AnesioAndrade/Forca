@@ -16,6 +16,7 @@ Gibbet::Gibbet(const std::string& word)
 	numAttempts = static_cast <int>(lengthGibbetWord * factor);
 	AttemptsOver = false;
 	gameOver = false;
+	wrongCharacter = false; 
 	aCharacter = 0;
 	//Apaga e preenche o Diplay com '_' conforme o tamanho de gibbetWord
 	resetDisplay();		
@@ -49,6 +50,7 @@ void Gibbet::resetDisplay()
 
 void Gibbet::showDisplay()
 {
+	//Verifica se a letra digitada existe
 	for (char l : gibbetWord) {
 		if (l == aCharacter) {
 			display.at(displayCount) = aCharacter;

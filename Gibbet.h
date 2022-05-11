@@ -22,6 +22,7 @@ private:
 	int numAttempts; //número de tentativas
 	bool AttemptsOver; //tentátivas encerradas
 	bool gameOver; //fim de jogo
+	bool wrongCharacter; //verdadeiro se a letra digitada não existir
 	float factor; // fator para criar um numero de tentativas baseado em gibbetWord
 	void resetDisplay();
 	void showDisplay();
