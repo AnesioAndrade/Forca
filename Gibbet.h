@@ -9,8 +9,10 @@ public:
 	~Gibbet();
 	void getCharacter(const char& c);
 	int getAttempts();
+	bool IsWrongChr();
+	bool isGameOver();
+	bool IsWordRight();
 
-	
 private:
 	std::vector<char>gibbetWord{}; //palavra para enforcamento
 	std::vector<char>display{}; //painel 
@@ -23,8 +25,11 @@ private:
 	int numAttempts; //número de tentativas
 	bool AttemptsOver; //tentátivas encerradas
 	bool gameOver; //fim de jogo
+	bool isWrongChr; // True se um caracter foi digitado errado.
+	bool isWordRight; // True se a palavra estiver correta
 	float factor; // fator para criar um numero de tentativas baseado em gibbetWord
 	void resetDisplay();
 	void showDisplay();
+	void checkWord();
 };
 

@@ -16,6 +16,8 @@ Gibbet::Gibbet(const std::string& word)
 	numAttempts = static_cast <int>(lengthGibbetWord * factor);
 	AttemptsOver = false;
 	gameOver = false;
+	isWrongChr = false; 
+	isWordRight = false;
 	wrongCharacter = lengthGibbetWord;
 	aCharacter = 0;
 	//Apaga e preenche o Diplay com '_' conforme o tamanho de gibbetWord
@@ -34,7 +36,26 @@ void Gibbet::getCharacter(const char& c)
 
 int Gibbet::getAttempts()
 {
+	if (numAttempts == 0) {
+		gameOver = true;
+		AttemptsOver = true;
+	}
 	return numAttempts;
+}
+
+bool Gibbet::IsWrongChr()
+{
+	return isWrongChr;
+}
+
+bool Gibbet::isGameOver()
+{
+	return gameOver;
+}
+
+bool Gibbet::IsWordRight()
+{
+	return isWordRight;
 }
 
 void Gibbet::resetDisplay()
@@ -50,6 +71,7 @@ void Gibbet::resetDisplay()
 
 void Gibbet::showDisplay()
 {
+	isWrongChr = false; // define isWrongChr 
 	//Verifica se a letra digitada existe
 	for (char l : gibbetWord)
 	{
@@ -60,7 +82,7 @@ void Gibbet::showDisplay()
 		}
 		else {
 			wrongCharacter--;
-			std::cout << "Total de caracteres errados = " << wrongCharacter << "\n";
+			//std::cout << "Total de caracteres errados = " << wrongCharacter << "\n";
 		}
 		displayCount++;
 	}
@@ -69,7 +91,8 @@ void Gibbet::showDisplay()
 	//verifica se a letra não existe
 	if (wrongCharacter == 0) //se verdadeiro
 	{ 
-		numAttempts--; //reduz numero de tentativas		
+		numAttempts--; //reduz numero de tentativas
+		isWrongChr = true;
 	}
 	//Atualiza display
 	for (char d : display)
@@ -77,6 +100,15 @@ void Gibbet::showDisplay()
 		std::cout << d << " ";
 	}
 	wrongCharacter = lengthGibbetWord;
+	checkWord();
+}
+
+void Gibbet::checkWord()
+{
+	if (rightCharacter == lengthGibbetWord) {
+		gameOver = true;
+		isWordRight = true;
+	}
 }
 
 
